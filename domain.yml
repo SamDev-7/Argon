@@ -1,0 +1,78 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - who_i
+  - mood_good
+  - mood_bad
+  - thank
+  - who_user
+  - ask_animal_image
+  - ask_joke
+  - suicide
+
+entities:
+  - animal
+
+responses:
+  utter_please_rephrase:
+  - text: "I'm sorry, I didn't quite get that. Can you rephrase?"
+  - text: "I didn't really understand what you were trying to say. Try rephrasing."
+
+  utter_greet:
+  - text: "Hey [NAME]!"
+  - text: "Hello, [NAME]!"
+  - text: "Hi there, [NAME]!"
+  - text: "Hi, [NAME]!"
+  - text: "Hey there!"
+
+  utter_greet_help:
+  - text: "How can I help you today?"
+  - text: "How can I help?"
+  - text: "What's up?"
+
+  utter_goodbye:
+  - text: "Bye!"
+  - text: "Goodbye!"
+  - text: "See you!"
+  - text: "Bye bye!"
+  - text: "See you around!"
+
+  utter_who_i:
+  - text: "I am Argon, your assistant powered by artificial intelligence. Mention me at the start of your message to chat!"
+
+  utter_cheer_up:
+  - text: "That's unfortunate, I have something to cheer you up! "
+  - text: "I hope this will make your day just a little better!"
+
+  utter_nice:
+  - text: "That's good to hear!"
+  - text: "Nice!"
+  - text: "That's great!"
+
+  utter_you_are_welcome:
+  - text: "You're welcome."
+  - text: "Happy I could help!"
+  - text: "Not a problem!"
+  - text: "Anytime!"
+  - text: "Happy to help :)"
+
+  utter_give_done:
+  - text: "Enjoy!"
+  - text: "Here you go!"
+  - text: "Here it is!"
+  - text: "Done!"
+
+  utter_prevent_suicide:
+  - text: "Help is available, visit <https://discord.com/safety/360044103771-Mental-health-on-Discord> for support information.\nPlease contact emergency services if someone is in immediate danger."
+
+actions:
+  - action_image_animal
+  - action_get_joke
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

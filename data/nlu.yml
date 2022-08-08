@@ -1,0 +1,220 @@
+version: "3.1"
+
+nlu:
+- lookup: animal
+  examples: |
+    - cat
+    - dog
+    - duck
+    - fox
+
+- synonym: name
+  examples: |
+    - username 
+
+- synonym: cat
+  examples: |
+    - kitten
+    - kitties
+    - cats
+
+- synonym: dog
+  examples: |
+    - doge
+    - pupies
+    - puppy
+    - dogs
+
+- synonym: duck
+  examples: |
+    - ducks
+    - ducklings
+
+- synonym: fox
+  examples: |
+    - foxes
+
+- synonym: give me
+  examples: |
+    - gimme
+    - giveme
+
+- synonym: image
+  examples: |
+    - photo
+    - picture
+
+- synonym: i am
+  examples: |
+    - i'm
+    - im
+    - iam
+
+- synonym: it is
+  examples: |
+    - it's
+    - its
+    - it s
+
+- synonym: do not
+  examples: |
+    - don't
+    - dont
+    - dnot
+
+- synonym: joke
+  examples: |
+    - dadjoke
+    - pun
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+        - cya
+        - good by
+        - cee you later
+        - good night
+        - bye
+        - goodbye
+        - have a nice day
+        - see you around
+        - bye bye
+        - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - that is great
+    - correct
+    - sure
+    - confirm
+    - yes please
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - i don't think so
+    - don't like that
+    - no way
+    - not really
+    - no thank you
+    - nah
+
+- intent: who_i
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am i talking to a bot?
+    - am i talking to a human?
+    - who are you?
+
+- intent: mood_good
+  examples: |
+    - happy
+    - feeling great
+    - feeling happy
+    - it is going well
+    - doing amazingly
+    - it is well
+    - it is great
+    - it is going great 
+    - perfect
+    - amazing
+    - feeling like a king
+    - wonderful
+    - feeling very good
+    - amazing
+    - going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_bad
+  examples: |
+    - not happy
+    - sad
+    - depressed
+    - it is not going well
+    - it is bad
+    - bad
+    - my day was horrible
+    - i don't feel very well
+    - i am disappointed
+    - super sad
+    - i'm so sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: thank
+  examples: |
+    - thank you
+    - thanks
+    - ty
+    - i appreciate it
+    - thank you so much
+    - thank you very much
+    - many thanks
+    - thanks a bunch
+
+- intent: who_user
+  examples: |
+    - who am i?
+    - do you know who i am?
+    - what is my name?
+
+- intent: ask_animal_image
+  examples: | 
+    - an image of a [cat](animal)
+    - an image of a [dog](animal)
+    - an image of a [fox](animal)
+    - image of [duck](animal)
+    - show me a [cat](animal)
+    - give me [duck](animal)
+    - image of animal
+    - show me an image of an animal
+    - give me an animal
+
+- intent: ask_joke
+  examples: |
+    - give me a joke
+    - a joke
+    - do something funny
+    - be funny
+    - generate a joke
+
+- intent: suicide
+  examples: | 
+    - to die
+    - suicide
+    - kms
+    - depression
+    - depressed
+    - end my life 
+    - kill myself
+    - die

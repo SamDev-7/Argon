@@ -1,0 +1,30 @@
+version: "3.1"
+
+stories:
+
+- story: Mood good path
+  steps:
+  - intent: mood_good
+  - action: utter_nice
+
+- story: Mood bad path
+  steps:
+  - intent: mood_bad
+  - action: utter_cheer_up
+  - action: action_image_animal
+
+- story: Animal image path
+  steps:
+  - intent: ask_animal_image
+  - action: utter_give_done
+  - action: action_image_animal
+
+- story: Joke path
+  steps:
+  - intent: ask_joke
+  - action: action_get_joke
+
+- story: Name user path
+  steps:
+  - intent: who_user
+  - action: utter_greet
