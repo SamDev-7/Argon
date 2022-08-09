@@ -7,12 +7,12 @@ authors = ["Your Name <you@example.com>"]
 [tool.poetry.dependencies]
 python = ">=3.8.0,<3.9"
 replit = "^3.2.4"
+rasa-sdk = {git = "https://github.com/SamDev-7/rasa-sdk-tokenauth.git"}
 rasa = "^3.2.5"
 logger = "^1.4"
 disnake = "^2.5.2"
 disnake-jishaku = "^2.6.5"
 aiohttp-retry = "^2.7.0"
-rasa-sdk = {git = "https://github.com/SamDev-7/rasa-sdk-tokenauth.git"}
 
 [tool.poetry.dev-dependencies]
 
