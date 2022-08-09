@@ -12,6 +12,11 @@ nlu:
   examples: |
     - username 
 
+- synonym: is
+  examples: |
+    - was
+    - are 
+
 - synonym: cat
   examples: |
     - kitten
@@ -203,6 +208,7 @@ nlu:
 - intent: ask_joke
   examples: |
     - give me a joke
+    - tell me a joke
     - a joke
     - do something funny
     - be funny
@@ -218,3 +224,20 @@ nlu:
     - end my life 
     - kill myself
     - die
+
+- intent: search
+  examples: |
+   - what is the [sum of 2+3](search_term)?
+   - what is the [population of england](search_term)?
+   - what is [Google](search_term)?
+   - who is [Steve Jobs](search_term)?
+   - where is [Key Park](search_term)?
+   - when is [Bill Gates born](search_term)?
+   - what is [wolfram alpha](search_term)?
+   - what is the [solution to x=2x+2](search_term)?
+   - how was [Apple founded](search_term)?
+   - how old is [Obama](search_term)?
+   - solve [yx+3=z, z=3x](search_term)
+   - find the solution to [f(x)=x5](search_term)
+   - plot [y=2x-5](search_term)
+   - graph [c^2=a^2+b^2](search_term)

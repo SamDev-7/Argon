@@ -1,9 +1,15 @@
-import subprocess
+import os
+from threading import Thread
 
 def background_execute(command):
-    subprocess.Popen(command,shell=True,stdout=True)
+    
+    def run():
+        print(f"Running {command}")
+        os.system(command)
+        
+    Thread(target=run).start()
 
-background_execute(['rasa run actions'])
-background_execute([f'&& rasa run -m models'])
+background_execute(f'rasa run actions --token {os.getenv("RASA_RASA_TOKEN")}')
+background_execute('export PYTHONPATH=/home/runner/Command-RASA/ && rasa run --response-timeout 20')
 
 import bot

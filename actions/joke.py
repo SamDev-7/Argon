@@ -11,7 +11,7 @@ class GetJoke(Action):
 
     async def run(self, dispatcher: CollectingDispatcher,
         tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=5)) as session:
+            async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=10)) as session:
                 try:
                     async with session.get('https://v2.jokeapi.dev/joke/Miscellaneous,Pun?blacklistFlags=nsfw,religious,political,racist,sexist,explicit') as resp:
                         if resp.status == 200:

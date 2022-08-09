@@ -13,9 +13,11 @@ intents:
   - ask_animal_image
   - ask_joke
   - suicide
+  - search
 
 entities:
   - animal
+  - search_term
 
 responses:
   utter_please_rephrase:
@@ -72,6 +74,7 @@ responses:
 actions:
   - action_image_animal
   - action_get_joke
+  - action_search
 
 session_config:
   session_expiration_time: 60

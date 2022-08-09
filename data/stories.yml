@@ -28,3 +28,8 @@ stories:
   steps:
   - intent: who_user
   - action: utter_greet
+
+- story: Respond to question
+  steps:
+  - intent: search 
+  - action: action_search
