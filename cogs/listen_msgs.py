@@ -1,4 +1,5 @@
 import io
+import os
 import aiohttp
 import disnake
 import traceback
@@ -12,7 +13,7 @@ class ListenMsgs(commands.Cog):
         self.bot = bot
         self.allowed_mentions = disnake.AllowedMentions.none()
 
-    async def fetch_rasa(self, message: str, usrid: str, second_try=False):
+    async def fetch_rasa(self, message: str, usrid: str, already_tried=False):
         data = {
             "message": message,
             'sender': usrid
@@ -20,11 +21,13 @@ class ListenMsgs(commands.Cog):
             
         async with RetryClient(timeout=aiohttp.ClientTimeout(total=5), retry_options=ExponentialRetry(attempts=3)) as session:
             try:
-                async with session.post('http://localhost:5005/webhooks/rest/webhook', json=data) as r:
+                async with session.post(f'http://localhost:5005/webhooks/restauth/webhook?token={os.getenv("RASA_TOKEN")}', json=data) as r:
                     if r.status == 200:
                         data = await r.json()
                         if len(data) <= 0:
-                            raise aiohttp.client_exceptions.ClientError()
+                            if already_tried == True:
+                                raise Exception("Empty response from Rasa")
+                            return await self.fetch_rasa(message, usrid, True)
                         text = []
                         images = []
                         urls = []
@@ -41,7 +44,7 @@ class ListenMsgs(commands.Cog):
                             images = None
                         return ' '.join(text), images
                     else:
-                        raise Exception("Rasa: Not OK")
+                        raise Exception(f"Rasa: Not OK: {r.status}")
             except Exception:
                 traceback.print_exc()
                 return 'Uh oh! There was an error connecting to our servers, try again later! Error Code: `RW`', None

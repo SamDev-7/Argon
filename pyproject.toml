@@ -12,6 +12,7 @@ logger = "^1.4"
 disnake = "^2.5.2"
 disnake-jishaku = "^2.6.5"
 aiohttp-retry = "^2.7.0"
+rasa-sdk = {git = "https://github.com/SamDev-7/rasa-sdk-tokenauth.git"}
 
 [tool.poetry.dev-dependencies]
 
