@@ -9,7 +9,7 @@ from disnake.ext import commands
 # Cog class
 class ListenMsgs(commands.Cog):
 
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
         self.allowed_mentions = disnake.AllowedMentions.none()
 
@@ -66,8 +66,8 @@ class ListenMsgs(commands.Cog):
             return
 
         # Mentioned bot
-        if message.content.startswith('<@1004936113384869968>'):
-            message.content = message.content.replace('<@1004936113384869968>', '', 1).strip()
+        if message.content.startswith(f'<@{self.bot.user.id}>'):
+            message.content = message.content.replace(f'<@{self.bot.user.id}>', '', 1).strip()
 
         if len(message.content) == 0:
             message.content = "who are you?"

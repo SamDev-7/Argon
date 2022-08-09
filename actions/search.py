@@ -31,7 +31,6 @@ class Search(Action):
                             embed.url = f"https://duckduckgo.com/?q={urllib.parse.quote(question, safe='')}&t=argon"
                             embed.set_author(name=f"Results from {data['AbstractSource']}", url=data['AbstractURL'])
                             embed.description = self.truncate(data['AbstractText'], 4096)
-                            embed.url = data['AbstractURL']
                             if data['Image']:
                                 embed.set_thumbnail(url=f"https://api.duckduckgo.com{data['Image']}")
                             embed.set_footer(text="Powered by DuckDuckGo", icon_url="https://duckduckgo.com/assets/logo_header.v108.png")
