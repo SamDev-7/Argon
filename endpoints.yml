@@ -12,7 +12,7 @@
 
 action_endpoint:
   url: "http://localhost:5055/webhook"
-  token: "D6AOIleq7Ys5yO5A"
+  token: "D6AOIleq7Ys5yO5A" # Replace with your token (this one is invalid)
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
